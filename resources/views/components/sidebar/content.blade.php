@@ -19,7 +19,7 @@
     <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
-        class="text-sm text-gray-500 dark:text-gray-300"
+        class="text-sm text-gray-700 dark:text-gray-300"
     >
         {{__('Students')}}
     </div>
@@ -59,7 +59,7 @@
     <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
-        class="text-sm text-gray-500 dark:text-gray-300"
+        class="text-sm text-gray-700 dark:text-gray-300"
     >
         {{__('Reunions')}}
     </div>
@@ -82,7 +82,7 @@
     <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
-        class="text-sm text-gray-500 dark:text-gray-300"
+        class="text-sm text-gray-700 dark:text-gray-300"
     >
         {{__('Admin')}}
     </div>
