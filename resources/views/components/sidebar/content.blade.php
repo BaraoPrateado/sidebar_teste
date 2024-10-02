@@ -1,9 +1,9 @@
 <x-perfect-scrollbar
     as="nav"
     aria-label="main"
-    class="flex flex-col flex-1 gap-4 px-3"
+    class="flex flex-col flex-1 gap-3 px-3"
 >
-
+    <!-- Dashboard -->
     <x-sidebar.link
         title="Dashboard"
         href="{{ route('dashboard') }}"
@@ -14,45 +14,109 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.dropdown
-        title="Buttons"
-        :active="Str::startsWith(request()->route()->uri(), 'buttons')"
-    >
-        <x-slot name="icon">
-            <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-
-        <x-sidebar.sublink
-            title="Text button"
-            href="{{ route('buttons.text') }}"
-            :active="request()->routeIs('buttons.text')"
-        />
-        <x-sidebar.sublink
-            title="Icon button"
-            href="{{ route('buttons.icon') }}"
-            :active="request()->routeIs('buttons.icon')"
-        />
-        <x-sidebar.sublink
-            title="Text with icon"
-            href="{{ route('buttons.text-icon') }}"
-            :active="request()->routeIs('buttons.text-icon')"
-        />
-    </x-sidebar.dropdown>
+    <!-- Transition - ALUNOS -->
 
     <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
-        class="text-sm text-gray-500"
+        class="text-sm text-gray-600 dark:text-gray-300"
     >
-        Dummy Links
+        {{__('Students')}}
     </div>
 
-    @php
-        $links = array_fill(0, 20, '');
-    @endphp
+    <x-sidebar.link
+        title="{{__('Student File')}}"
+        href="{{route('example.link')}}"
+        :isActive="request()->routeIs('teste')"
+    >
+        <x-slot name="icon">
+            <x-icons.person class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
 
-    @foreach ($links as $index => $link)
-        <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
-    @endforeach
+    <x-sidebar.link
+        title="{{__('Frequency List')}}"
+        href="{{route('example.link')}}"
+        :isActive="request()->routeIs('teste')"
+    >
+        <x-slot name="icon">
+            <x-icons.frequency class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    <x-sidebar.link
+        title="{{__('Diagnostic Registration')}}"
+        href="{{route('example.link')}}"
+        :isActive="request()->routeIs('teste')"
+    >
+        <x-slot name="icon">
+            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    <!-- Transition - REUNIÕES -->
+
+    <div
+        x-transition
+        x-show="isSidebarOpen || isSidebarHovered"
+        class="text-sm text-gray-600 dark:text-gray-300"
+    >
+        {{__('Reunions')}}
+    </div>
+
+    <x-sidebar.link
+        title="{{__('Dates and Information')}}"
+        href="{{route('example.link')}}"
+        :isActive="request()->routeIs('teste')"
+    >
+        <x-slot name="icon">
+            <x-icons.meeting class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+
+    <!-- Transition - ADMIN -->
+
+    @can('admin-view')
+
+    <div
+        x-transition
+        x-show="isSidebarOpen || isSidebarHovered"
+        class="text-sm text-gray-600 dark:text-gray-300"
+    >
+        {{__('Admin')}}
+    </div>
+
+    <x-sidebar.link
+        title="{{__('Expense Control')}}"
+        href="{{route('example.link')}}"
+        :isActive="request()->routeIs('teste')"
+    >
+        <x-slot name="icon">
+            <x-icons.expense class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    <x-sidebar.dropdown
+        title="{{ __('Partnes') }}"
+        :active="Str::startsWith(request()->route()->uri(), 'buttons')"
+    >
+        <x-slot name="icon">
+            <x-icons.partner class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+
+        <x-sidebar.sublink
+            title="{{ __('List of Contributors') }}"
+            href="{{ route('example.link') }}"
+            :active="request()->routeIs('teste')"
+        />
+        <x-sidebar.sublink
+            title="{{ __('Donation Control') }}"
+            href="{{ route('example.link') }}"
+            :active="request()->routeIs('teste')"
+        />
+    </x-sidebar.dropdown>
+
+    @endcan
 
 </x-perfect-scrollbar>

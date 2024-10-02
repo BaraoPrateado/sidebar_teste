@@ -6,7 +6,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div class="grid gap-6">
+            <div class="grid gap-3">
                 <!-- Name -->
                 <div class="space-y-2">
                     <x-form.label

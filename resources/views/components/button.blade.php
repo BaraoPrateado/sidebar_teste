@@ -15,10 +15,10 @@
 
     switch ($variant) {
         case 'primary':
-            $variantClasses = 'bg-purple-500 text-white hover:bg-purple-600 focus:ring-purple-500';
+            $variantClasses = 'bg-gray-700 text-white hover:text-white hover:bg-gray-900 focus:ring-gray-900 dark:hover:bg-dark-eval-3';
         break;
         case 'secondary':
-            $variantClasses = 'bg-white text-gray-500 hover:bg-gray-100 focus:ring-purple-500 dark:text-gray-400 dark:bg-dark-eval-1 dark:hover:bg-dark-eval-2 dark:hover:text-gray-200';
+            $variantClasses = 'bg-white text-gray-500 hover:bg-gray-100 focus:ring-gray-500 dark:text-gray-400 dark:bg-dark-eval-1 dark:hover:bg-dark-eval-2 dark:hover:text-gray-200';
         break;
         case 'success':
             $variantClasses = 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500';
@@ -36,7 +36,7 @@
             $variantClasses = 'bg-black text-gray-300 hover:text-white hover:bg-gray-800 focus:ring-black dark:hover:bg-dark-eval-3';
         break;
         default:
-            $variantClasses = 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-500';
+            $variantClasses = 'bg-gray-300 text-white hover:bg-gray-600 focus:ring-gray-500';
     }
 
     switch ($size) {

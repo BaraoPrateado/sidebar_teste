@@ -4,7 +4,17 @@
         href="{{ route('dashboard') }}"
         class="inline-flex items-center gap-2"
     >
-        <x-application-logo aria-hidden="true" class="w-10 h-auto" />
+
+        <x-application-mini-logo 
+            x-show="!isSidebarOpen"
+            aria-hidden="true"
+            class="mini-logo" 
+        />
+
+        <x-application-logo 
+            x-show="isSidebarOpen"
+            class="h-logo"
+        />
 
         <span class="sr-only">Dashboard</span>
     </a>
