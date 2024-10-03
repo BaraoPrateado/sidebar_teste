@@ -50,7 +50,7 @@
         :isActive="request()->routeIs('teste')"
     >
         <x-slot name="icon">
-            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            <x-icons.diagnostic class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
 
@@ -89,7 +89,7 @@
 
     <x-sidebar.link
         title="{{__('Expense Control')}}"
-        href="{{route('example.link')}}"
+        href="{{route('adminsla')}}"
         :isActive="request()->routeIs('teste')"
     >
         <x-slot name="icon">
@@ -107,12 +107,12 @@
 
         <x-sidebar.sublink
             title="{{ __('List of Contributors') }}"
-            href="{{ route('example.link') }}"
+            href="{{ route('adminsla') }}"
             :active="request()->routeIs('teste')"
         />
         <x-sidebar.sublink
             title="{{ __('Donation Control') }}"
-            href="{{ route('example.link') }}"
+            href="{{ route('adminsla') }}"
             :active="request()->routeIs('teste')"
         />
     </x-sidebar.dropdown>

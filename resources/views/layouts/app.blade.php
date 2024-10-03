@@ -22,6 +22,7 @@
     </style>
     <link rel="stylesheet" href=" {{ asset('css/etc.css') }} ">
 
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

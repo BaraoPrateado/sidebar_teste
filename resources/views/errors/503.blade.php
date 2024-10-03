@@ -2,15 +2,15 @@
 <x-app-layout>
     
     <x-slot name="header">
-        <h2 class="font-semibold text-xl leading-tight m-bottom" style="margin: ;">
-            ERROR 404
+        <h2 class="font-semibold text-xl leading-tight m-bottom">
+            ERROR 503
         </h2>
     </x-slot>
 
-    <div class="container padding h-error d-flex justify-content-center align-items-center" >
-    <div class="col-5 text-center p-error">
-            <div class="border bg-light style-error" style=" ">
-                {{ __('Service Une!') }}
+    <div class="h-error center">
+        <div class="text-center padding p-error overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+            <div class="style-error">
+                {{ __('Service Unavailable!') }}
             </div>
         </div>
     </div>

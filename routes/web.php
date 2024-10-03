@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\CheckAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+// Start in:
 Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -27,32 +29,26 @@ Route::middleware('auth')->group(function () {
 
 // Funcional Site
 Route::middleware('auth')->group(function () {
+
+    // User Access:
     Route::get('/example', function() {
         return view('example');
     })->name('example.link');
 
+    // Admin Access:
+    Route::middleware(CheckAdmin::class)->group( function() {
+        Route::get('/admin', function() {
+            return view('forbidden');
+        })->name('adminsla');
+    });
 
     Route::fallback(function () {
         return view('errors.404');
     });
 });
+
 // Route::resources([
 
 // ])
-
-
-// useless routes
-// Just to demo sidebar dropdown links active states.
-Route::get('/buttons/text', function () {
-    return view('buttons-showcase.text');
-})->middleware(['auth'])->name('buttons.text');
-
-Route::get('/buttons/icon', function () {
-    return view('buttons-showcase.icon');
-})->middleware(['auth'])->name('buttons.icon');
-
-Route::get('/buttons/text-icon', function () {
-    return view('buttons-showcase.text-icon');
-})->middleware(['auth'])->name('buttons.text-icon');
 
 require __DIR__ . '/auth.php';
