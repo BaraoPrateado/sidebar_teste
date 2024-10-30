@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\DiagnosticController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckAdmin;
@@ -30,10 +32,15 @@ Route::middleware('auth')->group(function () {
 // Funcional Site
 Route::middleware('auth')->group(function () {
 
-    // User Access:
     Route::get('/example', function() {
         return view('example');
     })->name('example.link');
+
+    // User Access:
+    Route::resources([
+        'student' => StudentController::class,
+        'diagnostic' => DiagnosticController::class
+    ]);
 
     // Admin Access:
     Route::middleware(CheckAdmin::class)->group( function() {
@@ -42,13 +49,10 @@ Route::middleware('auth')->group(function () {
         })->name('adminsla');
     });
 
+    // Not Found:
     Route::fallback(function () {
         return view('errors.404');
     });
 });
-
-// Route::resources([
-
-// ])
 
 require __DIR__ . '/auth.php';

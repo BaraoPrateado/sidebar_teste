@@ -233,7 +233,7 @@ return [
         'current_password' => 'senha atual',
         'complement' => 'complemento',
         'modality' => 'modalidade',
-        'category' => 'categoria',
+        'diagnostic' => 'categoria',
         'blood_type' => 'tipo sanguíneo',
         'birth_date' => 'data de nascimento'
     ],

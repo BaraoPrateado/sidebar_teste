@@ -4,6 +4,13 @@ import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
 import PerfectScrollbar from 'perfect-scrollbar'
 
+import Inputmask from 'inputmask'
+
+document.addEventListener("DOMContentLoaded", function (){
+    var dateMask = new Inputmask("99/99/9999");
+    dateMask.mask(document.querySelector('.date'))
+});
+
 window.PerfectScrollbar = PerfectScrollbar
 
 document.addEventListener('alpine:init', () => {

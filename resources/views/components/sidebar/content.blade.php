@@ -26,8 +26,8 @@
 
     <x-sidebar.link
         title="{{__('Student File')}}"
-        href="{{route('example.link')}}"
-        :isActive="request()->routeIs('teste')"
+        href="{{route('student.index')}}"
+        :isActive="request()->routeIs('student.index', 'student.create', 'student.edit')"
     >
         <x-slot name="icon">
             <x-icons.person class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
@@ -46,8 +46,8 @@
 
     <x-sidebar.link
         title="{{__('Diagnostic Registration')}}"
-        href="{{route('example.link')}}"
-        :isActive="request()->routeIs('teste')"
+        href="{{route('diagnostic.index')}}"
+        :isActive="request()->routeIs('diagnostic.index', 'diagnostic.create', 'diagnostic.edit')"
     >
         <x-slot name="icon">
             <x-icons.diagnostic class="flex-shrink-0 w-6 h-6" aria-hidden="true" />

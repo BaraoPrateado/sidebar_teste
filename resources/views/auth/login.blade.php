@@ -19,7 +19,7 @@
                             <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
 
-                        <x-form.input withicon id="email" class="block w-full" type="email" name="email"
+                        <x-form.input withicon id="email" class="block w-full dark:text-gray-300" type="email" name="email"
                             :value="old('email')" placeholder="{{ __('Email') }}" required autofocus />
                     </x-form.input-with-icon-wrapper>
                 </div>
@@ -33,7 +33,7 @@
                             <x-heroicon-o-lock-closed aria-hidden="false" class="w-5 h-5" />
                         </x-slot>
 
-                        <x-form.input withicon id="password" class="block w-full" type="password" name="password"
+                        <x-form.input withicon id="password" class="block w-full dark:text-gray-300" type="password" name="password"
                             required autocomplete="current-password" placeholder="{{ __('Password') }}" />
 
                         <button type="button" id="togglePassword"
@@ -87,25 +87,7 @@
                         <span class="dark:text-gray-300">{{ __('Log in') }}</span>
                     </x-button>
                 </div>
-                
-
-                <!-- <div>
-                    <x-button class="justify-center w-full gap-2">
-                        <x-heroicon-o-login class="w-6 h-6" aria-hidden="true" />
-
-                        <span>{{ __('Log in') }}</span>
-                    </x-button>
-                </div>
-
-                @if (Route::has('register'))
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('Don’t have an account?') }}
-                        <a href="{{ route('register') }}" class="text-blue-500 hover:underline">
-                            {{ __('Register') }}
-                        </a>
-                    </p>
-                @endif -->
-
+            
             </div>
         </form>
     </x-auth-card>

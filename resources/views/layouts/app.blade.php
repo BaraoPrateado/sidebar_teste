@@ -6,8 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title> @yield('title', config('app.name', 'Laravel')) </title>
-
+    
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
     <!-- Fonts -->
     <link
@@ -25,6 +27,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -53,8 +56,8 @@
 
                 <!-- Page Heading -->
                 <header>
-                    <div class="p-4 sm:p-6">
-                        {{ $header }}
+                    <div class="p-3 sm:p-6">
+                        {{ $header ?? ''}}
                     </div>
                 </header>
 
